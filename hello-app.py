@@ -1,9 +1,10 @@
+
 import streamlit as st
-import mymodel as m
+import pandas as pd
+import numpy as np
 
-st.write("""
-# Sale model
-Below are our sales predictions for this customer.
-""")
+df = pd.DataFrame(
+   np.random.randn(10, 5),
+   columns=('col %d' % i for i in range(5)))
 
-st.write(m.run(window=15))
+st.table(df)
